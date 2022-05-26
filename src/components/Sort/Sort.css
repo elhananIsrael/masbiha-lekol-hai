@@ -1,0 +1,13 @@
+.Sort {
+  display: flex;
+  align-self: flex-end;
+}
+
+.Sort-collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+
+.Sort-collection-sort:first-child {
+  padding-right: 20px;
+}
