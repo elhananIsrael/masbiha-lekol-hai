@@ -15,40 +15,44 @@ function ProductDetails() {
   // console.log("productsArr", productsArr);
 
   return (
-    <div title={product?.title} className="Product-card">
-      <h1>Product Details</h1>
-      <br />
-      <br />
-      <h3>ID Number: {_id}</h3>
-      <div className="Product-image">
-        <img
-          alt="Shop Item"
-          src={product?.image}
-          style={{
-            padding: "10%",
-            marginLeft: "auto",
-            marginRight: "auto",
-            display: "block",
-          }}
-        />
-      </div>
-      <div className="Product-info">
-        <h5>{"title: " + product?.title}</h5>
-        <h5>{"description: " + product?.description}</h5>
-        <h5>{"category: " + product?.category}</h5>
-        <h5>
-          {"rating: " +
-            "rate: " +
-            product?.rating?.rate +
-            " count: " +
-            product?.rating?.count}
-        </h5>
-        <h6 style={{ marginBottom: "5px" }}>${product?.price}</h6>
-        <div style={{ display: "inline-block" }}>
-          <AddReductItemCart _id={_id} quantity={product?.quantity} />
+    <>
+      {product?.quantity && (
+        <div title={product?.title} className="Product-card">
+          <h1>Product Details</h1>
+          <br />
+          <br />
+          <h3>ID Number: {_id}</h3>
+          <div className="Product-image">
+            <img
+              alt="Shop Item"
+              src={product?.image}
+              style={{
+                padding: "10%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                display: "block",
+              }}
+            />
+          </div>
+          <div className="Product-info">
+            <h5>{"title: " + product?.title}</h5>
+            <h5>{"description: " + product?.description}</h5>
+            <h5>{"category: " + product?.category}</h5>
+            <h5>
+              {"rating: " +
+                "rate: " +
+                product?.rating?.rate +
+                " count: " +
+                product?.rating?.count}
+            </h5>
+            <h6 style={{ marginBottom: "5px" }}>${product?.price}</h6>
+            <div style={{ display: "inline-block" }}>
+              <AddReductItemCart _id={_id} quantity={product?.quantity} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
