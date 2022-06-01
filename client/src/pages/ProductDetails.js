@@ -25,8 +25,7 @@ function ProductDetails() {
           alt="Shop Item"
           src={product?.image}
           style={{
-            width: "500px",
-            height: "500px",
+            padding: "10%",
             marginLeft: "auto",
             marginRight: "auto",
             display: "block",
