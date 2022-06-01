@@ -21,9 +21,10 @@ import AddReductItemCart from "./AddReductItemCart/AddReductItemCart";
 import { useContext, useState } from "react";
 
 const MyCartDrawer = () => {
-  const [cartArr, , , , , , ,] = useContext(MyContext);
+  const [productsArr, , cartLength, , , , , , , , ,] = useContext(MyContext);
   const [drawerState, setDrawerState] = useState(false);
-
+  // console.log("MyCartDrawer", cartLength);
+  // console.log("productsArr", productsArr);
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -45,67 +46,70 @@ const MyCartDrawer = () => {
       <List
         sx={{ width: "100%", maxWidth: "360", bgcolor: "background.paper" }}
       >
-        {cartArr.length > 0 &&
-          cartArr.map((cartItem) => (
-            <ListItem alignItems="flex-start" key={cartItem.id}>
-              <ListItemAvatar>
-                {/* <Avatar
+        {productsArr.length > 0 &&
+          cartLength > 0 &&
+          productsArr
+            .filter((product) => product.quantity > 0)
+            .map((cartItem) => (
+              <ListItem alignItems="flex-start" key={cartItem._id}>
+                <ListItemAvatar>
+                  {/* <Avatar
                   alt="Remy Sharp"
                   src={cartItem.image}
                   variant="rounded"
                   sx={{ width: "50px", height: "50px" }}
                 /> */}
-                {/* <div> */}
-                <img
-                  alt="Cart Item"
-                  src={cartItem.image}
-                  // style={{ width: "40px", paddingRight: "20px" }}
-                  style={{
-                    // paddingLeft: "5px",
-                    paddingRight: "5px",
-                    width: "50px",
-                    height: "50px",
-                  }}
-                />
-                {/* </div> */}
-              </ListItemAvatar>
-              <div style={{ flexDirection: "column" }}>
-                <ListItemText
-                  primary={cartItem.title}
-                  // secondary={
-
-                  // }
-                />
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <Typography
-                    sx={{ display: "inline", alignSelf: "left" }}
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    ${cartItem.price}
-                  </Typography>
-                  <br style={{ marginBottom: "5px" }} />
-                  <AddReductItemCart
-                    id={cartItem.id}
-                    //   marginRight="auto"
-                    numItems={cartItem.numItems}
+                  {/* <div> */}
+                  <img
+                    alt="Cart Item"
+                    src={cartItem.image}
+                    // style={{ width: "40px", paddingRight: "20px" }}
+                    style={{
+                      // paddingLeft: "5px",
+                      paddingRight: "5px",
+                      width: "50px",
+                      height: "50px",
+                    }}
                   />
-                </Box>
-              </div>
-            </ListItem>
-            //   <Divider variant="inset" component="li" />
+                  {/* </div> */}
+                </ListItemAvatar>
+                <div style={{ flexDirection: "column" }}>
+                  <ListItemText
+                    primary={cartItem.title}
+                    // secondary={
 
-            //   <CartProduct
-            //     key={cartItem.id}
-            //     id={cartItem.id}
-            //     title={cartItem.description}
-            //     src={cartItem.image}
-            //     cartItem_info={cartItem.title}
-            //     price={cartItem.price}
-            //     numItems={cartItem.numItems}
-            //   />
-          ))}
+                    // }
+                  />
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <Typography
+                      sx={{ display: "inline", alignSelf: "left" }}
+                      component="span"
+                      variant="body2"
+                      color="text.primary"
+                    >
+                      ${cartItem.price}
+                    </Typography>
+                    <br style={{ marginBottom: "5px" }} />
+                    <AddReductItemCart
+                      _id={cartItem._id}
+                      //   marginRight="auto"
+                      quantity={cartItem.quantity}
+                    />
+                  </Box>
+                </div>
+              </ListItem>
+              //   <Divider variant="inset" component="li" />
+
+              //   <CartProduct
+              //     key={cartItem._id}
+              //     _id={cartItem._id}
+              //     title={cartItem.description}
+              //     src={cartItem.image}
+              //     cartItem_info={cartItem.title}
+              //     price={cartItem.price}
+              //     quantity={cartItem.quantity}
+              //   />
+            ))}
       </List>
     </Box>
   );
@@ -121,9 +125,9 @@ const MyCartDrawer = () => {
         onClick={toggleDrawer(true)}
       >
         <p>MY CART</p>
-        {cartArr.length > 0 ? (
+        {cartLength > 0 ? (
           <>
-            <Badge badgeContent={cartArr.length} color="error">
+            <Badge badgeContent={cartLength} color="error">
               <ShoppingCartIcon />
             </Badge>
             <br />

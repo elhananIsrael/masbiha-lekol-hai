@@ -3,17 +3,12 @@ import FilterBy from "../FilterBy";
 import SortBy from "../SortBy";
 import FilterByPrice from "../FilterByPrice";
 
-function Sort({ sort_products, sort_categories, app_filterProducts }) {
-  /*console.log("sort_products:");
-  console.log(sort_products);
-  console.log("sort_categories:");
-  console.log(sort_categories);*/
-
+function Sort({ sort_categories, setFilterBy_categories }) {
   return (
     <div title="Sort" className="Sort">
       <FilterBy
         filterBy_categories={sort_categories}
-        app_filterProducts={app_filterProducts}
+        setFilterBy_categories={setFilterBy_categories}
       />
       <SortBy />
       <FilterByPrice />

@@ -1,13 +1,13 @@
 import "./CartProduct.css";
 import AddReductItemCart from "../AddReductItemCart/AddReductItemCart";
 
-function CartProduct({ id, title, src, cartItem_info, price, numItems }) {
+function CartProduct({ _id, title, src, cartItem_info, price, quantity }) {
   /*console.log("header_products:");
     console.log(header_products);
     console.log("header_categories:");
     console.log(header_categories);*/
-  //let numItems = 0;
-  console.log(numItems);
+  //let quantity = 0;
+  console.log(quantity);
   return (
     <div title={title} className="CartProduct-card">
       <div className="CartProduct-image">
@@ -19,7 +19,7 @@ function CartProduct({ id, title, src, cartItem_info, price, numItems }) {
           <h5 style={{ marginLeft: "auto" }}>${price}</h5>
           {/* <br style={{ marginBottom: "5px" }} /> */}
 
-          <AddReductItemCart id={id} marginRight="auto" numItems={numItems} />
+          <AddReductItemCart _id={_id} marginRight="auto" quantity={quantity} />
         </div>
       </div>
     </div>
