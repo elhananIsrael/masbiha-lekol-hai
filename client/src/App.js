@@ -214,6 +214,9 @@ function App() {
           setPricesRangeLocal,
           sortBy,
           setSortBy,
+          totalPrice,
+          shipping,
+          total,
         ]}
       >
         <MyAppBar />

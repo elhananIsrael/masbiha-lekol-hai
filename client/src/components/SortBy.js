@@ -3,7 +3,7 @@ import { useContext } from "react";
 import MyContext from "../MyContext";
 
 function SortBy() {
-  const [, , , , , , , , , , setSortBy] = useContext(MyContext);
+  const [, , , , , , , , , , setSortBy, , , ,] = useContext(MyContext);
 
   return (
     <TextField

@@ -16,6 +16,9 @@ function Products() {
     ,
     sortBy,
     ,
+    ,
+    ,
+    ,
   ] = useContext(MyContext);
   // console.log(sortBy);
   const mySort = (str) => {

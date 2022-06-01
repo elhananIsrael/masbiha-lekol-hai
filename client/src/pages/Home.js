@@ -20,7 +20,7 @@ const myDate = () => {
 function Home({ productsArr, allCategories, setFilterBy_categories }) {
   const h1Ref = useRef(null);
   useEffect(() => {
-    console.log("HOME");
+    // console.log("HOME");
     setFilterBy_categories("all");
 
     if ((h1Ref !== undefined || h1Ref !== null) && h1Ref.current)

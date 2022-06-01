@@ -8,19 +8,8 @@ function Cart({ wid }) {
   console.log(header_products);
   console.log("header_categories:");
   console.log(header_categories);*/
-  const [
-    productsArr,
-    setProductsArr,
-    cartLength,
-    addItemQuantity,
-    removeItemQuantity,
-    pricesRange,
-    pricesRangeLocal,
-    filterBy_categories,
-    setPricesRangeLocal,
-    sortBy,
-    setSortBy,
-  ] = useContext(MyContext);
+  const [productsArr, , cartLength, , , , , , , , , , , ,] =
+    useContext(MyContext);
   return (
     <div className="Cart" style={{ width: wid }}>
       <div>

@@ -74,7 +74,7 @@ AirbnbThumbComponent.propTypes = {
 
 function FilterByPrice() {
   //   const classes = useStyles();
-  const [, , , , , [minPrice, maxPrice], , , setPricesRangeLocal, , ,] =
+  const [, , , , , [minPrice, maxPrice], , , setPricesRangeLocal, , , , , ,] =
     useContext(MyContext);
   // console.log([minPrice, maxPrice]);
   // console.log([minPriceLocal, maxPriceLocal]);

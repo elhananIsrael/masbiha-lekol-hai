@@ -4,7 +4,7 @@ import AddReductItemCart from "../components/AddReductItemCart//AddReductItemCar
 import MyContext from "../MyContext";
 
 function ProductDetails() {
-  const [productsArr, , , , , , , , , , ,] = useContext(MyContext);
+  const [productsArr, , , , , , , , , , , , , ,] = useContext(MyContext);
   const { _id } = useParams();
   let product;
   productsArr

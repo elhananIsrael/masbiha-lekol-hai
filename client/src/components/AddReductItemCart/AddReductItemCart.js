@@ -8,7 +8,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import Typography from "@mui/material/Typography";
 
 function AddReductItemCart({ _id, marginRight, quantity }) {
-  const [, , , addItemQuantity, removeItemQuantity, , , , , , ,] =
+  const [, , , addItemQuantity, removeItemQuantity, , , , , , , , , ,] =
     useContext(MyContext);
 
   return (
