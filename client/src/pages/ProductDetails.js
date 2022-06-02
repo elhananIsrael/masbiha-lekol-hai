@@ -13,7 +13,6 @@ function ProductDetails({ productsArr }) {
     productsArr
       .filter((item) => item._id === _id)
       .map((myProduct) => setProduct(myProduct));
-    console.log("product", product);
   }, [productsArr]);
 
   return (

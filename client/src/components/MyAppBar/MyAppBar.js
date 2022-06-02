@@ -128,7 +128,12 @@ const MyAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page.title}
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  to={page.path}
+                >
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
