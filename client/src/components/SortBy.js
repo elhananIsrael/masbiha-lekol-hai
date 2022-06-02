@@ -12,7 +12,6 @@ function SortBy() {
       size="small"
       label="Sort By:"
       onChange={(e) => {
-        console.log(e.target.value);
         setSortBy(e.target.value);
       }}
       SelectProps={{

@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import MyContext from "../MyContext";
+import MyContext from "../../MyContext";
+import "./CartSummary.css";
 
 function CartSummary() {
   const [, , , , , , , , , , , totalPrice, shipping, total] =
@@ -23,7 +24,7 @@ function CartSummary() {
           <strong>${total}</strong>
         </dd>
       </dl>
-      <hr />
+      {/* <hr /> */}
       <span
         style={{ pointerEvents: "none" }}
         className="btn btn-out btn-success btn-square btn-main mt-2"

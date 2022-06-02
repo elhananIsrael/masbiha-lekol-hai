@@ -19,7 +19,7 @@ import MyContext from "../MyContext";
 // import CartProduct from "./CartProduct/CartProduct";
 import AddReductItemCart from "./AddReductItemCart/AddReductItemCart";
 import { useContext, useState } from "react";
-import CartSummary from "./CartSummary";
+import CartSummary from "./CartSummary/CartSummary";
 
 const MyCartDrawer = () => {
   const [productsArr, , cartLength, , , , , , , , , , , ,] =
