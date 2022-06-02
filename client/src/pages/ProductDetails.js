@@ -1,22 +1,24 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddReductItemCart from "../components/AddReductItemCart//AddReductItemCart";
+import Loader from "../components/Loader/Loader";
 import MyContext from "../MyContext";
 
-function ProductDetails() {
-  const [productsArr, , , , , , , , , , , , , ,] = useContext(MyContext);
+function ProductDetails({ productsArr }) {
+  // const [productsArr, , , , , , , , , , , , , ,] = useContext(MyContext);
   const { _id } = useParams();
-  let product;
-  productsArr
-    .filter((item) => item._id === _id)
-    .map((myProduct) => (product = myProduct));
-  // console.log("_id", _id);
-  // console.log("product", product);
-  // console.log("productsArr", productsArr);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    productsArr
+      .filter((item) => item._id === _id)
+      .map((myProduct) => setProduct(myProduct));
+    console.log("product", product);
+  }, [productsArr]);
 
   return (
     <>
-      {product?.quantity && (
+      {product?._id ? (
         <div title={product?.title} className="Product-card">
           <h1>Product Details</h1>
           <br />
@@ -51,6 +53,11 @@ function ProductDetails() {
             </div>
           </div>
         </div>
+      ) : (
+        <>
+          <h1>Product Details</h1>
+          <Loader />
+        </>
       )}
     </>
   );

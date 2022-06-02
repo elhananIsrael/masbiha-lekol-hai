@@ -234,7 +234,10 @@ function App() {
                 />
               }
             />
-            <Route path="/products/:_id" element={<ProductDetails />} />
+            <Route
+              path="/products/:_id"
+              element={<ProductDetails productsArr={productsArr} />}
+            />
             <Route path="/about" element={<About />} />
             {/* <Route path="/users">
             <Users />
